@@ -64,14 +64,18 @@
     }
 }
 - (IBAction)clearAllButton:(UIButton *)sender {
+    [Person MR_truncateAll];
+}
+
+- (void)resetCoreData {
     NSURL *storeURL = [NSPersistentStore MR_urlForStoreName:[MagicalRecord defaultStoreName]];
-    
+
     NSLog(@"%@", storeURL);
-    
+
     [MagicalRecord cleanUp];
-    
+
     NSError *error;
-    
+
     if([[NSFileManager defaultManager] removeItemAtURL:storeURL error: &error]){
         NSLog(@"remove successful");
         [MagicalRecord setupAutoMigratingCoreDataStack];
