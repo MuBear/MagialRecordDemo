@@ -6,6 +6,12 @@
 
 #import <Availability.h>
 
+// If you want to omit the "MR_" prefix to all MagicalRecord realted method calls define following before importing the MagicalRecord header
+//#define MR_SHORTHAND
+// Turn off MagicalRecord logging
+//#define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
+#import "CoreData+MagicalRecord.h"
+
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
